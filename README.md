@@ -4,7 +4,7 @@
    $ npx react-native init record-update-app
 
 2. you need to clone the app only
-   $ git clone url
+   $ git clone git@github.com:vishswati1011/react_native_todoapp.git
 
 3. install package
    $ npm i

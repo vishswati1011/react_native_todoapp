@@ -54,7 +54,6 @@ const styles = StyleSheet.create({
   addButton: {
     alignSelf: 'flex-end',
     width: 60,
-    padding: 10,
     borderRadius: 50,
     justifyContent: 'center',
     alignItems: 'center',

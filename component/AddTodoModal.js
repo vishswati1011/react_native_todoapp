@@ -19,7 +19,7 @@ const AddTodo = () => {
   const [todo, setTodo] = useState('');
 
   const saveTodo = () => {
-    addTodos({text: todo, key: Math.random().toString()});
+    addTodos({text: todo, status: false, key: Math.random().toString()});
     setTodo('');
   };
   return (

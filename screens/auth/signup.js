@@ -71,7 +71,7 @@ export default function Signup() {
           placeholder="enter your password"
           style={styles.input}
           name="password"
-          type="password"
+          secureTextEntry={true}
           value={formik.values.password}
           onChangeText={formik.handleChange('password')}
           onBlur={formik.handleBlur('password')}
@@ -82,10 +82,10 @@ export default function Signup() {
 
         <Text style={styles.label}>Confirm Password</Text>
         <TextInput
-          placeholder="re-enter your password"
+          placeholder="Re-enter your password"
           style={styles.input}
           name="confirm_password"
-          type="password"
+          secureTextEntry={true}
           value={formik.values.confirm_password}
           onChangeText={formik.handleChange('confirm_password')}
           onBlur={formik.handleBlur('confirm_password')}
@@ -107,7 +107,7 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     display: 'flex',
-    justifyContent: 'center',
+    // justifyContent: 'center',
     padding: 20,
     backgroundColor: '#fff',
   },
@@ -119,7 +119,7 @@ const styles = StyleSheet.create({
     fontSize: 24,
     marginBottom: 20,
     fontWeight: 'bold',
-    fontColor: 'black',
+    color: '#06b6d4',
   },
   subtitle: {
     fontSize: 18,

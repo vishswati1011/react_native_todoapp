@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useContext} from 'react';
 import {
   Box,
   Button,
@@ -9,13 +9,15 @@ import {
   VStack,
   NativeBaseProvider,
 } from 'native-base';
-
+import {AuthContext} from '../../context/authContext';
 import {StyleSheet, Text, TouchableOpacity} from 'react-native';
 import {useFormik} from 'formik';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import {useNavigation} from '@react-navigation/native';
 export default function Login() {
   const navigation = useNavigation();
+  const {login} = useContext(AuthContext);
+
   const validate = values => {
     const errors = {};
     if (values.email === '') {
@@ -47,7 +49,7 @@ export default function Login() {
           if (userData.email === values.email) {
             if (userData.password === values.password) {
               console.log('matched');
-              await AsyncStorage.setItem('token', 'loggedIn');
+              login('loggedIn');
               await navigation.navigate('Home');
             } else {
               alert('Invalid password');
@@ -67,12 +69,12 @@ export default function Login() {
         <Box safeArea p="2" w="100%" maxW="290" py="8">
           <Heading
             size="lg"
-            color="coolGray.800"
+            color="#06b6d4"
             _dark={{
               color: 'warmGray.50',
             }}
             fontWeight="semibold">
-            Checkout daily records
+            Welcome!
           </Heading>
           <VStack space={3} mt="5">
             <FormControl>
@@ -112,5 +114,6 @@ const styles = StyleSheet.create({
   link: {
     color: 'blue',
     marginTop: 10,
+    marginLeft: 'auto',
   },
 });

@@ -7,12 +7,13 @@ import {TouchableOpacity} from 'react-native';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import Icon from 'react-native-vector-icons/FontAwesome';
 import {useNavigation} from '@react-navigation/native';
+import {AuthContext} from '../context/authContext';
 const Home = () => {
   const {todos} = useContext(TodoContext);
+  const {logout} = useContext(AuthContext);
   const navigation = useNavigation();
   const handleLogout = async () => {
-    await AsyncStorage.removeItem('token');
-    await AsyncStorage.removeItem('todo_user');
+    logout();
     navigation.navigate('Login');
   };
   return (

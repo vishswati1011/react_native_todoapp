@@ -4,6 +4,7 @@ const initialState = {
   todos: [],
   addTodos: () => {},
   deleteTodo: () => {},
+  chekedTodo: () => {},
 };
 
 const TodoContext = createContext(initialState);
@@ -14,6 +15,16 @@ const TodoProvider = ({children}) => {
   const addTodos = useCallback(
     todo => {
       setTodos([...todos, todo]);
+    },
+    [todos],
+  );
+  const chekedTodo = useCallback(
+    key => {
+      setTodos(
+        todos.map(todo =>
+          todo.key === key ? {...todo, status: !todo.status} : todo,
+        ),
+      );
     },
     [todos],
   );
@@ -30,8 +41,9 @@ const TodoProvider = ({children}) => {
       todos,
       addTodos,
       deleteTodo,
+      chekedTodo,
     }),
-    [todos, addTodos, deleteTodo],
+    [todos, addTodos, deleteTodo, chekedTodo],
   );
 
   return <TodoContext.Provider value={value}>{children}</TodoContext.Provider>;
