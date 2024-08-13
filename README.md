@@ -1,3 +1,14 @@
+### screen shot of app screens
+
+![todo1](https://github.com/user-attachments/assets/924ea378-fbb2-4cc0-a1d1-b63d189a2c52)
+
+
+![todo2](https://github.com/user-attachments/assets/5365a118-5068-480c-bb84-04dea50e726d)
+
+
+![todo3](https://github.com/user-attachments/assets/612cd381-12bd-4f81-8c26-b2db37fff09a)
+
+
 # Record update App
 
 1. created app using cmd
